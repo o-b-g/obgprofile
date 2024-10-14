@@ -195,6 +195,9 @@ const CONFIG = {
   googleAnalytics: {
     id: '', // GA3 tracking id/GA4 tag id UA-XXXXXXXXX-X | G-XXXXXXXXXX
   },
+  googleTagManager: {
+    id: '', // GTM id GTM-XXXXXXX
+  },
   // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: {
     id: '',
