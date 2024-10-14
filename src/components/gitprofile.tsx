@@ -218,6 +218,10 @@ const GitProfile = ({ config }: { config: Config }) => {
                       github={sanitizedConfig.github}
                       social={sanitizedConfig.social}
                     />
+                  </div>
+                </div>
+                <div className="col-span-1">
+                  <div className="grid grid-cols-1 gap-6">
                     {sanitizedConfig.skills.length !== 0 && (
                       <SkillCard
                         loading={loading}
@@ -230,22 +234,6 @@ const GitProfile = ({ config }: { config: Config }) => {
                         experiences={sanitizedConfig.experiences}
                       />
                     )}
-                    {sanitizedConfig.certifications.length !== 0 && (
-                      <CertificationCard
-                        loading={loading}
-                        certifications={sanitizedConfig.certifications}
-                      />
-                    )}
-                    {sanitizedConfig.educations.length !== 0 && (
-                      <EducationCard
-                        loading={loading}
-                        educations={sanitizedConfig.educations}
-                      />
-                    )}
-                  </div>
-                </div>
-                <div className="lg:col-span-2 col-span-1">
-                  <div className="grid grid-cols-1 gap-6">
                     {sanitizedConfig.projects.github.display && (
                       <GithubProjectCard
                         header={sanitizedConfig.projects.github.header}
@@ -264,20 +252,36 @@ const GitProfile = ({ config }: { config: Config }) => {
                     )}
                     {sanitizedConfig.projects.external.projects.length !==
                       0 && (
-                      <ExternalProjectCard
-                        loading={loading}
-                        header={sanitizedConfig.projects.external.header}
-                        externalProjects={
-                          sanitizedConfig.projects.external.projects
-                        }
-                        googleAnalyticId={sanitizedConfig.googleAnalytics.id}
-                      />
-                    )}
+                        <ExternalProjectCard
+                          loading={loading}
+                          header={sanitizedConfig.projects.external.header}
+                          externalProjects={
+                            sanitizedConfig.projects.external.projects
+                          }
+                          googleAnalyticId={sanitizedConfig.googleAnalytics.id}
+                        />
+                      )}
                     {sanitizedConfig.blog.display && (
                       <BlogCard
                         loading={loading}
                         googleAnalyticsId={sanitizedConfig.googleAnalytics.id}
                         blog={sanitizedConfig.blog}
+                      />
+                    )}
+                  </div>
+                </div>
+                <div className="col-span-1">
+                  <div className="grid grid-cols-1 gap-6">
+                    {sanitizedConfig.educations.length !== 0 && (
+                      <EducationCard
+                        loading={loading}
+                        educations={sanitizedConfig.educations}
+                      />
+                    )}
+                    {sanitizedConfig.certifications.length !== 0 && (
+                      <CertificationCard
+                        loading={loading}
+                        certifications={sanitizedConfig.certifications}
                       />
                     )}
                   </div>

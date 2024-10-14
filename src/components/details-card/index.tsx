@@ -194,12 +194,66 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
                   }
                 />
               )}
+              {social?.website && (
+                <ListItem
+                  icon={<FaGlobe />}
+                  title="Website:"
+                  value={social.website
+                    .replace('https://', '')
+                    .replace('http://', '')}
+                  link={
+                    !social.website.startsWith('http')
+                      ? `http://${social.website}`
+                      : social.website
+                  }
+                />
+              )}
+              {social?.email && (
+                <ListItem
+                  icon={<RiMailFill />}
+                  title="Email:"
+                  value={social.email}
+                  link={`mailto:${social.email}`}
+                />
+              )}
+              {social?.phone && (
+                <ListItem
+                  icon={<RiPhoneFill />}
+                  title="Phone:"
+                  value={social.phone.replace(/^(\+\d{2})(\d{3})(\d{3})(\d{2})(\d{2})$/, '$1 ($2) $3 $4 $5')}
+                  link={`tel:${social.phone}`}
+                />
+              )}
+              {social?.telegram && (
+                <ListItem
+                  icon={<FaTelegram />}
+                  title="Telegram"
+                  value={social.telegram}
+                  link={`https://t.me/${social.telegram}`}
+                />
+              )}
+              {social?.linkedin && (
+                <ListItem
+                  icon={<FaLinkedin />}
+                  title="LinkedIn:"
+                  value={social.linkedin}
+                  link={`https://www.linkedin.com/in/${social.linkedin}`}
+                />
+              )}
               <ListItem
                 icon={<AiFillGithub />}
                 title="GitHub:"
                 value={github.username}
                 link={`https://github.com/${github.username}`}
               />
+              {social?.stackoverflow && (
+                <ListItem
+                  icon={<FaStackOverflow />}
+                  title="Stack Overflow:"
+                  value={social.stackoverflow.split('/').slice(-1)}
+                  link={`https://stackoverflow.com/users/${social.stackoverflow}`}
+                />
+              )}
               {social?.researchGate && (
                 <ListItem
                   icon={<SiResearchgate />}
@@ -230,14 +284,6 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
                   title="Mastodon:"
                   value={getFormattedMastodonValue(social.mastodon, false)}
                   link={getFormattedMastodonValue(social.mastodon, true)}
-                />
-              )}
-              {social?.linkedin && (
-                <ListItem
-                  icon={<FaLinkedin />}
-                  title="LinkedIn:"
-                  value={social.linkedin}
-                  link={`https://www.linkedin.com/in/${social.linkedin}`}
                 />
               )}
               {social?.dribbble && (
@@ -320,58 +366,12 @@ const DetailsCard = ({ profile, loading, social, github }: Props) => {
                   link={`https://dev.to/${social.dev}`}
                 />
               )}
-              {social?.stackoverflow && (
-                <ListItem
-                  icon={<FaStackOverflow />}
-                  title="Stack Overflow:"
-                  value={social.stackoverflow.split('/').slice(-1)}
-                  link={`https://stackoverflow.com/users/${social.stackoverflow}`}
-                />
-              )}
-              {social?.website && (
-                <ListItem
-                  icon={<FaGlobe />}
-                  title="Website:"
-                  value={social.website
-                    .replace('https://', '')
-                    .replace('http://', '')}
-                  link={
-                    !social.website.startsWith('http')
-                      ? `http://${social.website}`
-                      : social.website
-                  }
-                />
-              )}
               {social?.skype && (
                 <ListItem
                   icon={<FaSkype />}
                   title="Skype"
                   value={social.skype}
                   link={`skype:${social.skype}?chat`}
-                />
-              )}
-              {social?.telegram && (
-                <ListItem
-                  icon={<FaTelegram />}
-                  title="Telegram"
-                  value={social.telegram}
-                  link={`https://t.me/${social.telegram}`}
-                />
-              )}
-              {social?.phone && (
-                <ListItem
-                  icon={<RiPhoneFill />}
-                  title="Phone:"
-                  value={social.phone}
-                  link={`tel:${social.phone}`}
-                />
-              )}
-              {social?.email && (
-                <ListItem
-                  icon={<RiMailFill />}
-                  title="Email:"
-                  value={social.email}
-                  link={`mailto:${social.email}`}
                 />
               )}
             </Fragment>
