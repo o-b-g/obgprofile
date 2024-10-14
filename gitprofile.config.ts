@@ -198,6 +198,10 @@ const CONFIG = {
   googleTagManager: {
     id: '', // GTM id GTM-XXXXXXX
   },
+  // Track visitor interaction and behavior. https://clarity.microsoft.com
+  clarity: {
+    id: '',
+  },
   // Track visitor interaction and behavior. https://www.hotjar.com
   hotjar: {
     id: '',
