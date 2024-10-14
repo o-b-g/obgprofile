@@ -58,6 +58,7 @@ const CONFIG = {
   },
   social: {
     linkedin: 'onurberkegur',
+    bluesky: 'obg.bsky.social',
     twitter: '',
     mastodon: '',
     researchGate: '',

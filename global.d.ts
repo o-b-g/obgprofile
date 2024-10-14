@@ -118,6 +118,11 @@ interface Social {
   twitter?: string;
 
   /**
+ * Bluesky
+ */
+  bluesky?: string;
+
+  /**
    * Mastodon
    */
   mastodon?: string;
